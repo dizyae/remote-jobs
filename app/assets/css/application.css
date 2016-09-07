@@ -39,6 +39,12 @@ body {
     background: #f4f4f4 !important;
 }
 
+h1 {
+    margin: 15px 0 15px 0;
+    text-align: center;
+    font-size: 30px;
+}
+
 a {
     text-decoration: none !important;
 }
