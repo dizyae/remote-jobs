@@ -32,6 +32,6 @@ module.exports = webpackMerge(commonConfig, {
     inline: true,
     stats: 'minimal',
     host: 'localhost',
-    port: 8007
+    port: 8012
   }
 });
