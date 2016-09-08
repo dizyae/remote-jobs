@@ -1,6 +1,6 @@
 {
-  "name": "psa-programs",
-  "description": "The programs app for Payscape Registration",
+  "name": "remote-jobs",
+  "description": "Finds remote jobs for me",
   "version": "1.0.0",
   "license": "proprietary",
   "scripts": {
@@ -19,17 +19,13 @@
     "url": "git@bitbucket.org:PayscapeDevelopment/registration.git"
   },
   "author": {
-    "name": "Derek Smart",
-    "email": "derek.smart@payscape.com"
+    "name": "Dustin Weaver",
+    "email": "dweaver@dustinweaver.com"
   },
   "contributors": [
     {
-      "name": "John Mercer",
-      "email": "john.mercer@payscape.com"
-    },
-    {
-      "name": "Michael Ngo",
-      "email": "michael.ngo@payscape.com"
+      "name": "Dustin Weaver",
+      "email": "dweaver@dustinweaver.com"
     }
   ],
   "private": true,
