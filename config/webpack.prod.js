@@ -11,7 +11,7 @@ module.exports = webpackMerge(commonConfig, {
 
   output: {
     path: path.resolve('./build'),
-    publicPath: '/',
+    publicPath: 'http://dustinweaver.com/jobs/remote/',
     filename: '[name].[hash].js',
     chunkFilename: '[id].[hash].chunk.js'
   },
