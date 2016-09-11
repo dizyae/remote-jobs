@@ -19,6 +19,9 @@
         detailState: 'some.state'
       };
       bindingsChanges = {
+        config: {
+          currentValue: config
+        },
         tableFilter: {}
       };
       $state = jasmine.createSpyObj('$state', ['go']);
@@ -30,7 +33,7 @@
       indexTableService.getPaginatedData.and.returnValue([[{pagindated: 'data'}]]);
       indexTableService.getSearchData.and.returnValue([{searched: 'data'}]);
       indexTableService.getSortedData.and.returnValue([{sorted: 'data'}]);
-      ctrl = _$componentController_('psaIndexTable', {
+      ctrl = _$componentController_('dwIndexTable', {
         $state: $state,
         indexTableService: indexTableService
       }, {
@@ -94,6 +97,7 @@
     describe('$onChanges hook', function() {
       beforeEach(function() {
         bindingsChanges = {
+          config: {},
           tableFilter: {
             currentValue: true
           }
@@ -120,14 +124,6 @@
         ctrl.$onChanges(bindingsChanges);
         expect(ctrl.currentData).not.toEqual(ctrl.config.data);
         expect(ctrl.currentData).toEqual([{searched: 'data'}]);
-      });
-
-      it('should reset the value of currentData model to initialization value', function() {
-        delete bindingsChanges.tableFilter.currentValue;
-        expect(ctrl.currentData).toEqual(ctrl.config.data);
-        ctrl.currentData = [{someNew: 'data'}];
-        ctrl.$onChanges(bindingsChanges);
-        expect(ctrl.currentData).toEqual(ctrl.config.data);
       });
     });
 
