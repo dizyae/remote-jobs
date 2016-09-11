@@ -1,0 +1,60 @@
+<div class="row">
+    <div class="col-sm-12 table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr id="title_head">
+                    <th ng-repeat="header in indexTable.config.headers track by $index"
+                        ng-click="indexTable.sortType = indexTable.config.fields[$index]; 
+                        indexTable.sortReverse = !indexTable.sortReverse;
+                        indexTable.sortTable();">
+                        {{header}}
+                        <span ng-show="indexTable.sortType == indexTable.config.fields[$index] && !indexTable.sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="indexTable.sortType == indexTable.config.fields[$index] && indexTable.sortReverse" class="fa fa-caret-up"></span>
+                    </th>
+                    <th ng-show="indexTable.config.editable" width="1px">ACTION</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="row in indexTable.exportData = indexTable.pageData">
+                    <td class="text-nowrap" ng-repeat="field in indexTable.config.fields" 
+                        ng-click="indexTable.goToDetails(row)">
+                        {{row[field]}}
+                    </td>
+                    <td ng-show="indexTable.config.editable"> 
+                        <a ng-click="indexTable.goToDetails(row)">
+                            <i class="fa fa-pencil"></i> 
+                        </a>
+                        <i class="fa fa-close fa-1x"></i> 
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div ng-show="!indexTable.pageData.length" class="alert alert-default">There is nothing to display.</div>
+    </div><!-- .col-sm-9 .table-responsive -->
+ </div><!-- .row -->
+ <div class="row">
+    <div class="col-sm-6">
+        
+    </div><!-- .col-sm-2 -->
+    <div id="number_of_results" class="col-sm-2"> 
+        <select class="form-control" 
+            ng-model="indexTable.limit"
+            ng-change="indexTable.setPage()"
+            ng-options="limitOption as (limitOption + ' per page') for limitOption in indexTable.limitOptions">
+        </select>
+    </div><!-- #number_of_results -->
+    <div id="page_numbers" class="col-sm-3">
+        <ul uib-pagination 
+            total-items="indexTable.currentData.length" 
+            ng-model="indexTable.currentPage"
+            ng-change="indexTable.setPage()"
+            class="pagination-md" 
+            items-per-page="indexTable.limit"
+            force-ellipses="true"
+            max-size="4"
+            direction-links="true"
+            next-text="&rsaquo;"
+            previous-text="&lsaquo;">
+        </ul>
+    </div><!-- #page_numbers -->
+</div>

@@ -1,4 +1,6 @@
 import angular from 'angular';
 
-export default angular.module('widgets', [])
+import indexTable from './index-table/index-table.module';
+
+export default angular.module('widgets', [indexTable])
   .name;

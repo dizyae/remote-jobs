@@ -1047,3 +1047,7 @@ a.invite {
     border:none;
     box-shadow: none;
 }
+
+#number_of_results {
+    margin: 18px 0;
+}

@@ -15,10 +15,21 @@ function getStates() {
       template: homeTemplate
     }
   }, {
-    state: 'home.indexTable',
+    state: 'home.jobs',
     config: {
       url: '',
       component: 'dwJobs'
+    }
+  }, {
+    state: 'home.jobDetails',
+    config: {
+      url: 'jobdetails',
+      template: '<p>Opening job post...</p>',
+      controller: ['$state', '$stateParams', '$window', function($state, $stateParams, $window) {
+        $window.open($stateParams.details.url);
+        $state.go('home.jobs');
+      }],
+      params: {details: null}
     }
   }];
 }

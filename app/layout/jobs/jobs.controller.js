@@ -1,6 +1,6 @@
-JobsController.$inject = ['logger', '$http', '$window'];
+JobsController.$inject = ['logger', '$http', '$window', '$filter'];
 
-export function JobsController(logger, $http, $window) {
+export function JobsController(logger, $http, $window, $filter) {
   var vm = this;
   vm.jobs = [];
   vm.tags = ['php', 'javascript', 'angularjs'];
@@ -21,9 +21,31 @@ export function JobsController(logger, $http, $window) {
   function filterJobs(response) {
     response.data.forEach(function(job) {
       if (checkForTags(job.tags)) {
+        job.tags = job.tags.join(', ');
+        job.date = $filter('date')(job.date, 'MM/dd/yy hh:mm a');
         vm.jobs.push(job);
       }
     });
+    setTableConfig(vm.jobs);
+  }
+
+  function setTableConfig(data) {
+    vm.tableConfig = {
+      headers: [
+        'Post Date',
+        'Company',
+        'Position',
+        'Tags'
+      ],
+      fields: [
+        'date',
+        'company',
+        'position',
+        'tags'
+      ],
+      data: data,
+      detailState: 'home.jobDetails'
+    };
   }
 
   function checkForTags(jobTags) {
