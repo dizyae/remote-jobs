@@ -59,10 +59,6 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.ProvidePlugin({
-      'window.Auth0Lock': 'auth0-lock'
-    }),
-
     new webpack.optimize.CommonsChunkPlugin({
       name: ['main', 'vendor']
     }),
