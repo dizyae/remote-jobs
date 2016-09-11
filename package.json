@@ -1,8 +1,8 @@
 {
-  "name": "remote-jobs",
-  "description": "Finds remote jobs for me",
+  "name": "jobsapp",
+  "description": "Remote Jobs for Me",
   "version": "1.0.0",
-  "license": "proprietary",
+  "license": "MIT",
   "scripts": {
     "build": "rimraf build/; webpack --config config/webpack.prod.js --progress --profile --bail",
     "debugTests": "karma --log-level debug start ./config/karma.conf.js",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@bitbucket.org:PayscapeDevelopment/registration.git"
+    "url": "git://github.com/dizyae/remote-jobs"
   },
   "author": {
     "name": "Dustin Weaver",

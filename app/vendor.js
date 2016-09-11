@@ -9,7 +9,7 @@ import 'angular';
 import 'angular-ui-router';
 
 // 3rd Party Libraries
-import 'angular-ui-bootstrap/src/modal';
+import 'angular-ui-bootstrap/src/pagination';
 
 // Styles
 import 'bootstrap/dist/css/bootstrap-theme.css';

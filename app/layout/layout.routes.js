@@ -18,7 +18,7 @@ function getStates() {
     state: 'home.indexTable',
     config: {
       url: '',
-      component: 'jobsIndexTable'
+      component: 'dwJobs'
     }
   }];
 }

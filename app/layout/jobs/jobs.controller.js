@@ -1,6 +1,6 @@
-IndexTableController.$inject = ['logger', '$http', '$window'];
+JobsController.$inject = ['logger', '$http', '$window'];
 
-export function IndexTableController(logger, $http, $window) {
+export function JobsController(logger, $http, $window) {
   var vm = this;
   vm.jobs = [];
   vm.tags = ['php', 'javascript', 'angularjs'];
