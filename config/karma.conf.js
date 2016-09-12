@@ -35,13 +35,14 @@ module.exports = function configureKarma(config) {
     },
 
     coverageReporter: {
+      dir: '../coverage/',
       reporters: [
         {
           type: 'html',
-          dir: '../coverage/'
+          subdir: 'html'
         }, {
           type: 'lcov',
-          dir: '../coverage/'
+          subdir: 'lcov'
         }
       ]
     },
