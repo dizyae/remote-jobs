@@ -34,7 +34,7 @@ module.exports = {
       test: /\.js$/,
       exclude: /(node_modules|\.spec\.js$|config)/,
       loader: 'babel-istanbul-loader'
-    },{
+    }, {
       test: /node_modules[\\\/]auth0-lock[\\\/].*\.js$/,
       loaders: [
         'transform-loader/cacheable?brfs',
